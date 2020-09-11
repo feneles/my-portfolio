@@ -1,0 +1,23 @@
+.navbar {
+  position: sticky !important;
+  margin: 0 auto;
+  width: 100%;
+  left: 0px;
+  right: 0;
+  top: 0px;
+  color: white;
+  z-index: 100;
+
+  &_menu {
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+  &-brand {
+    font-weight: 500;
+  }
+}
+.nav-item {
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+}
