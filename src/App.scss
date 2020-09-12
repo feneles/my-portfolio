@@ -3,6 +3,7 @@
 @import "./styles/Header.scss";
 @import "./styles/Navbar.scss";
 @import "./styles/Main.scss";
+@import "./styles/About.scss";
 
 * {
   margin: 0;
@@ -10,7 +11,7 @@
   box-sizing: border-box;
 }
 #root {
-  background-color: rgb(13, 41, 56);
+  background-color: #0d2938;
 }
 .app {
   color: white;

@@ -1,16 +1,118 @@
 .main {
-  min-height: 100vh;
+  position: relative;
+  min-height: 155vh;
   width: 100%;
   text-align: center;
   background-color: #001524;
   &_topText {
     margin: 7% auto 0;
     font-size: 40px;
+    & > span {
+      color: #ff7f5f;
+    }
   }
-  &_project--image {
-    width: 100%;
-    object-fit: contain;
+  &_firstProject {
+    position: absolute;
+    top: 25%;
+    left: 15%;
   }
-  &_singleProject {
+  &_secondProject {
+    position: absolute;
+    top: 45%;
+    right: 15%;
   }
+  &_thirdProject {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+  }
+}
+
+.card_ {
+  width: 400px;
+}
+.card_:hover .card_content {
+  transform: rotateY(0.5turn);
+}
+
+.card_content {
+  text-align: center;
+  position: relative;
+  padding: 5em;
+  background: grey;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+}
+
+.card_front,
+.card_back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8em 2em;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.card_title {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  transform: translateZ(6rem);
+  box-shadow: 0 0 5px black;
+}
+.card_back {
+  background: #0d2938;
+  transform: rotateY(0.5turn);
+  display: flex;
+}
+.card_front {
+  width: 100%;
+  background-size: cover;
+  background-color: #444;
+  background-blend-mode: overlay;
+}
+.first_project {
+  background-image: url("../img/project1.png");
+}
+.second_project {
+  background-image: url("../img/project2.png");
+}
+.third_project {
+  background-image: url("../img/project3.png");
+}
+
+.card_front::before,
+.card_back::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 5px solid #ff7f5f;
+  transform: translateZ(2rem);
+  border-radius: 15px;
+}
+
+.card_github {
+  width: 70px;
+  height: 70px;
+  transform: translateZ(6rem);
+}
+.card_liveIcon {
+  transform: translateZ(6rem);
+}
+.card_subtitle {
+  transform: translateZ(4rem);
+  opacity: 0.7;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
 }

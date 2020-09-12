@@ -1,0 +1,15 @@
+.about {
+  text-align: center;
+  &_topText {
+    margin: 7% auto 0;
+    font-size: 40px;
+    & > span {
+      color: #ff7f5f;
+    }
+    &_list {
+    }
+  }
+}
+.about {
+  margin-bottom: 35px;
+}

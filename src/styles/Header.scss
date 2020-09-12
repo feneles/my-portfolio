@@ -12,9 +12,11 @@
     z-index: 1;
   }
   &_firstText {
+    position: relative;
     font-size: 55px;
   }
   &_secondText {
+    position: relative;
     font-size: 40px;
     color: #ff7f5f;
   }

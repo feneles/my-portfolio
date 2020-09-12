@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import bxDownArrowAlt from "@iconify/icons-bx/bx-down-arrow-alt";
 
 function Header() {
