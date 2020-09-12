@@ -3,12 +3,12 @@ import { Icon } from "@iconify/react";
 import worldLine from "@iconify/icons-clarity/world-line";
 function Main() {
   return (
-    <div className="main row px-0 mx-0">
-      <h2 className="main_topText w-100">
+    <div className="main">
+      <h2 className="main_topText">
         <span>{"<"}</span>projects
         <span>{">"}</span>
       </h2>
-      <div projects="main_projectsContainer ">
+      <div projects="main_projectsContainer">
         <div className="main_firstProject">
           <div className="card_">
             <div className="card_content">
