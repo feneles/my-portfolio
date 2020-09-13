@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function Navbar() {
   return (
@@ -16,10 +17,50 @@ function Navbar() {
       </button>
       <div className="navbar_menu collapse navbar-collapse">
         <ul className="navbar-nav">
-          <li className="nav-item mx-4 my-2">Home</li>
-          <li className="nav-item mx-4 my-2">Projects</li>
-          <li className="nav-item mx-4 my-2">About</li>
-          <li className="nav-item mx-4 my-2">Contact</li>
+          <li className="nav-item mx-4 my-2">
+            <Link
+              to="header"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={1000}
+            >
+              Home
+            </Link>
+          </li>
+          <li className="nav-item mx-4 my-2">
+            <Link
+              activeClass="active"
+              spy={true}
+              to="projects"
+              smooth={true}
+              duration={1000}
+            >
+              Projects
+            </Link>
+          </li>
+          <li className="nav-item mx-4 my-2">
+            <Link
+              activeClass="active"
+              spy={true}
+              to="about"
+              smooth={true}
+              duration={1000}
+            >
+              About
+            </Link>
+          </li>
+          <li className="nav-item mx-4 my-2">
+            <Link
+              activeClass="active"
+              spy={true}
+              to="contact"
+              smooth={true}
+              duration={1000}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

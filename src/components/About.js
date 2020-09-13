@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 
 function About() {
+  useEffect(() => {
+    AOS.init({ duration: 5000 });
+  }, []);
   return (
-    <div className="about row">
+    <div className="about row" id="about">
       <h2 className="about_topText w-100">
         <span>{"<"}</span>about<span>{">"}</span>
       </h2>
       <div className="about_container col-12">
         <div className="about_section col-lg-6 mx-auto">
           <p>
-            Hi, My name is Marek Rogala and I am Frontend Developer. I'm
-            currently based in Warsaw, Poland. I staretd to learn programming a
-            half year ago, since then I spend whole days learning. Now it's
-            became my passion. I'm focusing in React and looking forward for
-            React Native.
+            Hi, My name is Marek Rogala and I am a Frontend Developer. I'm
+            currently based in Warsaw, Poland. I staretd learning programming
+            half a year ago, since then I spend whole days learning. Now it
+            became my passion. I'm focusing on React and looking forward to
+            learn React Native.
           </p>
         </div>
         <div className="skills_container col-lg-6">

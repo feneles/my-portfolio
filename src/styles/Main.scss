@@ -4,6 +4,7 @@
   width: 100%;
   text-align: center;
   background-color: #001524;
+
   padding-top: 35px;
   &_topText {
     margin: 7% auto 0;
@@ -71,7 +72,6 @@
 .card_back {
   background: #0d2938;
   transform: rotateY(0.5turn);
-  display: flex;
 }
 .card_front {
   width: 100%;
@@ -106,9 +106,13 @@
   width: 70px;
   height: 70px;
   transform: translateZ(6rem);
+  margin-bottom: 25px;
 }
 .card_liveIcon {
+  width: 70px;
+  height: 70px;
   transform: translateZ(6rem);
+  margin-top: 15px;
 }
 .card_subtitle {
   transform: translateZ(4rem);

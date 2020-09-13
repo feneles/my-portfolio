@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import { db } from "../firebase";
+import { init } from "emailjs-com";
+import emailjs from "emailjs-com";
+
+init("user_BRBbNz2r5kJC6XFAc7PTu");
 
 function Contact() {
   const [name, setName] = useState("");
@@ -9,23 +12,30 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    db.collection("contacts")
-      .add({
-        name: name,
-        email: email,
-        message: message,
-      })
-      .then(() => {
-        alert("Message has been sended");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    const templateParams = {
+      name,
+      email,
+      message,
+    };
+    console.log(process.env.REACT_APP_SERVICE_ID);
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        templateParams
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (
-    <div className="contact">
+    <div className="contact px-0 mx-0" id="contact">
       <h2 className="contact_topText">
         <span>{"<"}</span>contact<span>{">"}</span>
       </h2>

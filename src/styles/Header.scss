@@ -88,6 +88,7 @@
 }
 
 .arrow {
+  cursor: pointer;
   animation: arrowAnimate 700ms linear infinite;
 }
 .arrow::after,

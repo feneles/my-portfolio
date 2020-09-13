@@ -19,4 +19,13 @@
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   min-height: 100vh;
+  overflow: hidden;
+}
+
+.active {
+  color: #ff7f5f;
+}
+.active:hover {
+  text-decoration: none;
+  color: #ff7f5f;
 }

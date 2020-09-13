@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import worldLine from "@iconify/icons-clarity/world-line";
 function Main() {
   return (
-    <div className="main">
+    <div className="main" id="projects">
       <h2 className="main_topText">
         <span>{"<"}</span>projects
         <span>{">"}</span>

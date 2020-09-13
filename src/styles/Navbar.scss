@@ -11,6 +11,9 @@
   &_menu {
     width: 100%;
     flex-direction: row-reverse;
+    & ul li {
+      cursor: pointer;
+    }
   }
   &-brand {
     font-weight: 500;
