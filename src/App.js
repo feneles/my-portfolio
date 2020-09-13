@@ -3,7 +3,6 @@ import "./App.scss";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-import Skills from "./components/Skills";
 import About from "./components/About";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
       <Navbar />
       <Header />
       <Main />
-      <Skills />
       <About />
     </div>
   );

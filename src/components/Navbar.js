@@ -18,7 +18,6 @@ function Navbar() {
         <ul className="navbar-nav">
           <li className="nav-item mx-4 my-2">Home</li>
           <li className="nav-item mx-4 my-2">Projects</li>
-          <li className="nav-item mx-4 my-2">Skills</li>
           <li className="nav-item mx-4 my-2">About</li>
           <li className="nav-item mx-4 my-2">Contact</li>
         </ul>
