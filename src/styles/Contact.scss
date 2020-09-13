@@ -1,0 +1,13 @@
+.contact {
+  text-align: center;
+  background-color: #001524;
+  min-height: 50vh;
+  padding-top: 30px;
+  &_topText {
+    margin: 3% auto 3%;
+    font-size: 45px;
+    & > span {
+      color: #ff7f5f;
+    }
+  }
+}

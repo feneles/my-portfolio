@@ -1,5 +1,10 @@
 .about {
   text-align: center;
+  &_section p {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
   &_section {
     text-align: center;
   }
