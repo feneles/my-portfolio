@@ -74,7 +74,7 @@ function Main() {
                     alt="github img"
                   />
                 </a>
-                <a href="https://e-commerce-store-1fa53.web.app/">
+                <a href="https://clone-57744.web.app">
                   <Icon
                     className="card_liveIcon"
                     icon={worldLine}
