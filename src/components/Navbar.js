@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 function Navbar() {
   return (
     <nav className="navbar navbar-dark navbar-expand-md">
-      <p className="navbar-brand">Marek Rogala</p>
+      <p className="navbar-brand my-auto">Marek Rogala</p>
       <button
         className="navbar-toggler"
         type="button"

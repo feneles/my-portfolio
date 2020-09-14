@@ -3,6 +3,11 @@
   background-color: #001524;
   min-height: 50vh;
   padding-top: 30px;
+  & p {
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
   &_topText {
     margin: 3% auto 5%;
     font-size: 45px;
@@ -16,7 +21,7 @@
   &_form {
     padding: 15px;
     border: 2px solid #ff7f5f;
-    margin: 30px auto 18vh;
+    margin: 30px auto 14vh;
     border-radius: 15px;
     font-weight: 600;
     background-color: #0d2938;

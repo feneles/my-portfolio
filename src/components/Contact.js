@@ -12,6 +12,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const templateParams = {
       name,
       email,
@@ -42,6 +43,8 @@ function Contact() {
       <h2 className="contact_topText">
         <span>{"<"}</span>contact<span>{">"}</span>
       </h2>
+      <p>You can reach out to me below.</p>
+
       <div className="contact_container col-md-6 offset-md-3">
         <Form className="contact_form">
           <Form.Group>
@@ -76,6 +79,7 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </Form.Group>
+
           <button
             onClick={handleSubmit}
             className="contact_button"
@@ -87,7 +91,7 @@ function Contact() {
       </div>
       <footer className="footer col-12">
         <div className="footer_iconContainer col-md-6 offset-md-3 py-3">
-          <div className="d-inline-block mr-3">
+          <div className="d-inline-block mx-3">
             <a href="https://github.com/feneles">
               <img
                 className="footer_icon"
@@ -102,15 +106,6 @@ function Contact() {
                 className="footer_icon"
                 src="/images/linkedin.png"
                 alt="linkedin img"
-              />
-            </a>
-          </div>
-          <div className="d-inline-block ml-3">
-            <a href="https://www.facebook.com/marek.rogala.16/">
-              <img
-                className="footer_icon"
-                src="/images/facebook.png"
-                alt="fecebook img"
               />
             </a>
           </div>

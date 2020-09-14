@@ -7,12 +7,14 @@
   top: 0px;
   color: white;
   z-index: 100;
-
+  background-color: rgba(0, 0, 0, 0.2);
   &_menu {
     width: 100%;
     flex-direction: row-reverse;
+
     & ul li {
       cursor: pointer;
+      text-align: right;
     }
   }
   &-brand {
