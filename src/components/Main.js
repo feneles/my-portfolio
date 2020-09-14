@@ -32,14 +32,20 @@ function Main() {
                 <p className="card_title">Online shop template</p>
               </div>
               <div className="card_back">
-                <a href="https://github.com/feneles/e-commerce-shop">
+                <a
+                  href="https://github.com/feneles/e-commerce-shop"
+                  target="_blank"
+                >
                   <img
                     className="card_github"
                     src="/images/github.png"
                     alt="github img"
                   />
                 </a>
-                <a href="https://e-commerce-store-1fa53.web.app/">
+                <a
+                  href="https://e-commerce-store-1fa53.web.app/"
+                  target="_blank"
+                >
                   <Icon
                     className="card_liveIcon"
                     icon={worldLine}
@@ -58,14 +64,14 @@ function Main() {
                 <p className="card_subtitle">profile browser</p>
               </div>
               <div className="card_back">
-                <a href="https://github.com/feneles/poe_app">
+                <a href="https://github.com/feneles/poe_app" target="_blank">
                   <img
                     className="card_github"
                     src="/images/github.png"
                     alt="github img"
                   />
                 </a>
-                <a href="https://poeapp-9beb2.web.app/">
+                <a href="https://poeapp-9beb2.web.app/" target="_blank">
                   <Icon
                     className="card_liveIcon"
                     icon={worldLine}
@@ -83,14 +89,17 @@ function Main() {
                 <h3 className="card_title">Amazon Clone</h3>
               </div>
               <div className="card_back">
-                <a href="https://github.com/feneles/amazon-clone">
+                <a
+                  href="https://github.com/feneles/amazon-clone"
+                  target="_blank"
+                >
                   <img
                     className="card_github"
                     src="/images/github.png"
                     alt="github img"
                   />
                 </a>
-                <a href="https://clone-57744.web.app">
+                <a href="https://clone-57744.web.app" target="_blank">
                   <Icon
                     className="card_liveIcon"
                     icon={worldLine}

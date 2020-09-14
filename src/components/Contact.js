@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 init("user_BRBbNz2r5kJC6XFAc7PTu");
 
@@ -13,38 +9,34 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
-  let contactTop = useRef(null);
-  let textAboveForm = useRef(null);
-  let contactForm = useRef(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      contactTop,
-      { x: "+=250", opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, scrollTrigger: contactTop }
-    );
-    gsap.fromTo(
-      textAboveForm,
-      { x: "-=250", opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, scrollTrigger: textAboveForm }
-    );
-    gsap.fromTo(
-      contactForm,
-      { x: "+=250", opacity: 0 },
-      { x: 0, opacity: 1, duration: 1, scrollTrigger: contactForm }
-    );
-  });
-
-  const handleSubmit = (e) => {
+  const handleForm = (e) => {
     e.preventDefault();
+
+    if (name === "") {
+      setNameError(true);
+      return;
+    } else setNameError(false);
+
+    if (!email.includes("@")) {
+      setEmailError(true);
+      return;
+    } else setEmailError(false);
+
+    if (message === "") {
+      setMessageError(true);
+      return;
+    } else setMessageError(false);
 
     const templateParams = {
       name,
       email,
       message,
     };
-    console.log(process.env.REACT_APP_SERVICE_ID);
+
     emailjs
       .send(
         process.env.REACT_APP_SERVICE_ID,
@@ -60,19 +52,19 @@ function Contact() {
         }
       );
     setName("");
-    setMessage("");
     setEmail("");
+    setMessage("");
   };
 
   return (
     <div className="contact px-0 mx-0" id="contact">
-      <h2 className="contact_topText" ref={(el) => (contactTop = el)}>
+      <h2 className="contact_topText">
         <span>{"<"}</span>contact<span>{">"}</span>
       </h2>
-      <p ref={(el) => (textAboveForm = el)}>You can reach out to me below.</p>
+      <p>You can reach out to me below.</p>
 
       <div className="contact_container col-md-6 offset-md-3">
-        <Form ref={(el) => (contactForm = el)} className="contact_form">
+        <Form className="contact_form" noValidate>
           <Form.Group>
             <Form.Label htmlFor="full-name">Name</Form.Label>
             <Form.Control
@@ -83,7 +75,9 @@ function Contact() {
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
-
+          {nameError === true && (
+            <div style={{ color: "red" }}>Name Required</div>
+          )}
           <Form.Group>
             <Form.Label htmlFor="email">Email</Form.Label>
             <Form.Control
@@ -94,7 +88,9 @@ function Contact() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
-
+          {emailError === true && (
+            <div style={{ color: "red" }}>Email Required</div>
+          )}
           <Form.Group>
             <Form.Label htmlFor="message">Message</Form.Label>
             <Form.Control
@@ -105,9 +101,15 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </Form.Group>
-
+          {messageError === true && (
+            <div style={{ color: "red" }}>Message Required</div>
+          )}
           <button
-            onClick={handleSubmit}
+            class="g-recaptcha"
+            data-sitekey="reCAPTCHA_site_key"
+            data-callback="onSubmit"
+            data-action="submit"
+            onClick={handleForm}
             className="contact_button"
             type="submit"
           >
@@ -118,7 +120,7 @@ function Contact() {
       <footer className="footer col-12">
         <div className="footer_iconContainer col-md-6 offset-md-3 py-3">
           <div className="d-inline-block mx-3">
-            <a href="https://github.com/feneles">
+            <a href="https://github.com/feneles" target="_blank">
               <img
                 className="footer_icon"
                 src="/images/github.png"
@@ -127,7 +129,10 @@ function Contact() {
             </a>
           </div>
           <div className="d-inline-block mx-3">
-            <a href="https://www.linkedin.com/in/marek-rogala-432bba1b6/">
+            <a
+              href="https://www.linkedin.com/in/marek-rogala-432bba1b6/"
+              target="_blank"
+            >
               <img
                 className="footer_icon"
                 src="/images/linkedin.png"
