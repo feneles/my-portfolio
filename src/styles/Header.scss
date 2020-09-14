@@ -10,6 +10,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    width: 100%;
+    overflow: hidden;
   }
   &_firstText {
     position: relative;
@@ -123,4 +125,30 @@
   }
 }
 
-// @media only screen and (max-width: );
+@media screen and (max-width: 767px) {
+  .header {
+    &_firstText {
+      font-size: 40px;
+    }
+    &_secondText {
+      font-size: 25px;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    &_firstText {
+      font-size: 35px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .header {
+    &_firstText {
+      font-size: 28px;
+    }
+    &_secondText {
+      font-size: 20px;
+    }
+  }
+}

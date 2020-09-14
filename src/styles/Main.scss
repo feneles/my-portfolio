@@ -121,3 +121,31 @@
   font-weight: 600;
   color: white;
 }
+
+@media screen and (max-width: 767px) {
+  .main {
+    min-height: 180vh;
+    &_firstProject {
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &_secondProject {
+      top: 45%;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+    &_thirdProject {
+      top: 75%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card_ {
+    width: 320px;
+  }
+}
