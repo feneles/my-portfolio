@@ -26,12 +26,15 @@ function Contact() {
       )
       .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text);
+          alert("Your email has been sent.");
         },
         function (error) {
           console.log("FAILED...", error);
         }
       );
+    setName("");
+    setMessage("");
+    setEmail("");
   };
 
   return (
