@@ -8,18 +8,19 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
     transform: translate(-50%, -50%);
     z-index: 1;
   }
   &_firstText {
     position: relative;
     font-size: 55px;
+    width: 100%;
   }
   &_secondText {
     position: relative;
     font-size: 40px;
     color: #ff7f5f;
+    width: 100%;
   }
   &_iconContainer {
     position: absolute;

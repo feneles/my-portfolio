@@ -1,17 +1,45 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function About() {
+  let about = useRef(null);
+  let aboutText = useRef(null);
+  let aboutIcons = useRef(null);
+
   useEffect(() => {
-    AOS.init({ duration: 5000 });
-  }, []);
+    // const aboutAnimation = about.firstElementChild;
+    // const aboutTextAnimation = aboutText.firstElementChild;
+    // const aboutIconsAnimation = aboutIcons.childNodes;
+    gsap.fromTo(
+      about,
+      { y: "+=250", opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, scrollTrigger: about }
+    );
+    gsap.fromTo(
+      aboutText,
+      { y: "+=250", opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, scrollTrigger: aboutText }
+    );
+    gsap.fromTo(
+      aboutIcons,
+      { y: "+=250", opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, scrollTrigger: aboutIcons }
+    );
+  });
+
   return (
     <div className="about row" id="about">
-      <h2 className="about_topText w-100">
+      <h2 className="about_topText w-100" ref={(el) => (about = el)}>
         <span>{"<"}</span>about<span>{">"}</span>
       </h2>
       <div className="about_container col-12">
-        <div className="about_section col-lg-6 mx-auto">
+        <div
+          className="about_section col-lg-6 mx-auto"
+          ref={(el) => (aboutText = el)}
+        >
           <p>
             Hi, My name is Marek Rogala and I am a Frontend Developer. I'm
             currently based in Warsaw, Poland. I staretd learning programming
@@ -20,7 +48,10 @@ function About() {
             learn React Native.
           </p>
         </div>
-        <div className="skills_container col-lg-6">
+        <div
+          className="skills_container col-lg-6"
+          ref={(el) => (aboutIcons = el)}
+        >
           <div className="skill_box">
             <div className="skill_title">
               <div className="skill_img">

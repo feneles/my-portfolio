@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import worldLine from "@iconify/icons-clarity/world-line";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function Main() {
+  let projectText = useRef(null);
+
+  useEffect(() => {
+    const project = projectText.firstElementChild;
+    gsap.fromTo(
+      project,
+      { y: "+=100", opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, scrollTrigger: project }
+    );
+  });
+
   return (
-    <div className="main" id="projects">
+    <div className="main" id="projects" ref={(el) => (projectText = el)}>
       <h2 className="main_topText">
         <span>{"<"}</span>projects
         <span>{">"}</span>

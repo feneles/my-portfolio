@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { init } from "emailjs-com";
 import emailjs from "emailjs-com";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 init("user_BRBbNz2r5kJC6XFAc7PTu");
 
@@ -9,6 +13,28 @@ function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  let contactTop = useRef(null);
+  let textAboveForm = useRef(null);
+  let contactForm = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      contactTop,
+      { x: "+=250", opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, scrollTrigger: contactTop }
+    );
+    gsap.fromTo(
+      textAboveForm,
+      { x: "-=250", opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, scrollTrigger: textAboveForm }
+    );
+    gsap.fromTo(
+      contactForm,
+      { x: "+=250", opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, scrollTrigger: contactForm }
+    );
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,13 +66,13 @@ function Contact() {
 
   return (
     <div className="contact px-0 mx-0" id="contact">
-      <h2 className="contact_topText">
+      <h2 className="contact_topText" ref={(el) => (contactTop = el)}>
         <span>{"<"}</span>contact<span>{">"}</span>
       </h2>
-      <p>You can reach out to me below.</p>
+      <p ref={(el) => (textAboveForm = el)}>You can reach out to me below.</p>
 
       <div className="contact_container col-md-6 offset-md-3">
-        <Form className="contact_form">
+        <Form ref={(el) => (contactForm = el)} className="contact_form">
           <Form.Group>
             <Form.Label htmlFor="full-name">Name</Form.Label>
             <Form.Control
