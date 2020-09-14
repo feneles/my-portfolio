@@ -1,4 +1,4 @@
-<strong>This is my digital portfolio made in React.js.</strong>
+<strong>This is my digital portfolio made in React.js. Animations were created in GSAP</strong>
 
 
 Live demo: https://marek-rogala.web.app
