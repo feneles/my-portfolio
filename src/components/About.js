@@ -42,10 +42,10 @@ function About() {
         >
           <p>
             Hi, My name is Marek Rogala and I am a Frontend Developer. I'm
-            currently based in Warsaw, Poland. I staretd learning programming
-            half a year ago, since then I spend whole days learning. Now it
-            became my passion. I'm focusing on React and looking forward to
-            learn React Native.
+            currently based in Warsaw, Poland. I started learning programming
+            half a year ago, since then I spent this whole time learning, and
+            since then it became my passion. I'm focusing on React and looking
+            forward to learn React Native.
           </p>
         </div>
         <div
