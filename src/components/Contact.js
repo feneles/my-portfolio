@@ -105,10 +105,6 @@ function Contact() {
             <div style={{ color: "red" }}>Message Required</div>
           )}
           <button
-            class="g-recaptcha"
-            data-sitekey="reCAPTCHA_site_key"
-            data-callback="onSubmit"
-            data-action="submit"
             onClick={handleForm}
             className="contact_button"
             type="submit"

@@ -90,8 +90,7 @@
   background-image: url("../img/project3.png");
 }
 
-.card_front::before,
-.card_back::before {
+.card_front::before {
   position: absolute;
   content: "";
   top: 0;
@@ -148,5 +147,33 @@
 @media screen and (max-width: 420px) {
   .card_ {
     width: 320px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1024px) {
+  .main {
+    &_firstProject {
+      top: 20%;
+    }
+
+    &_thirdProject {
+      top: 70%;
+    }
+  }
+}
+
+@media (orientation: landscape) and (max-width: 830px) {
+  .main {
+    min-height: 300vh;
+    &_firstProject {
+      top: 17%;
+    }
+    &_secondProject {
+      top: 43%;
+    }
+
+    &_thirdProject {
+      top: 70%;
+    }
   }
 }
