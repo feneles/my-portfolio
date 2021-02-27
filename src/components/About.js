@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,47 +10,44 @@ function About() {
   let aboutIcons = useRef(null);
 
   useEffect(() => {
-    // const aboutAnimation = about.firstElementChild;
-    // const aboutTextAnimation = aboutText.firstElementChild;
-    // const aboutIconsAnimation = aboutIcons.childNodes;
     gsap.fromTo(
       about,
-      { y: "+=250", opacity: 0 },
+      { y: '+=250', opacity: 0 },
       { y: 0, opacity: 1, duration: 1, scrollTrigger: about }
     );
     gsap.fromTo(
       aboutText,
-      { y: "+=250", opacity: 0 },
+      { y: '+=250', opacity: 0 },
       { y: 0, opacity: 1, duration: 1, scrollTrigger: aboutText }
     );
     gsap.fromTo(
       aboutIcons,
-      { y: "+=250", opacity: 0 },
+      { y: '+=250', opacity: 0 },
       { y: 0, opacity: 1, duration: 1, scrollTrigger: aboutIcons }
     );
   });
 
   return (
     <div className="about row" id="about">
-      <h2 className="about_topText w-100" ref={(el) => (about = el)}>
-        <span>{"<"}</span>about<span>{">"}</span>
+      <h2 className="about_topText w-100" ref={el => (about = el)}>
+        <span>{'<'}</span>about<span>{'>'}</span>
       </h2>
       <div className="about_container col-12">
         <div
           className="about_section col-lg-6 mx-auto"
-          ref={(el) => (aboutText = el)}
+          ref={el => (aboutText = el)}
         >
           <p>
             Hi, My name is Marek Rogala and I am a Frontend Developer. I'm
             currently based in Warsaw, Poland. I started learning programming
-            half a year ago, since then I spent this whole time learning, and
-            since then it became my passion. I'm focusing on React and looking
-            forward to learn React Native.
+            more than year ago, since then I spent this whole time learning, and
+            since then it became my passion. I'm currently working as Frontend
+            Developer in OrangeMaple.
           </p>
         </div>
         <div
           className="skills_container col-lg-6"
-          ref={(el) => (aboutIcons = el)}
+          ref={el => (aboutIcons = el)}
         >
           <div className="skill_box">
             <div className="skill_title">
